@@ -4,13 +4,8 @@ import 'animal_state.dart';
 import 'animal_type.dart';
 
 abstract class Animal implements Eat, Poop, Sleep {
-  AnimalType? _animalType;
-
-  AnimalType? get animalType => _animalType;
-
-  var _animalName = "";
-
-  String get animalName => _animalName;
+  late final AnimalType animalType;
+  late final String animalName;
 
   final List<Function> actions = [];
   Function(Animal)? onChangeState;
@@ -35,7 +30,7 @@ abstract class Animal implements Eat, Poop, Sleep {
   }
 
   String _generateAnimalName(int id) {
-    return (_animalType == null) ? "" : _animalType!.value + "-$id";
+    return animalType.value + "-$id";
   }
 
   void startLife() async {
@@ -97,8 +92,8 @@ class Duck extends Bird implements Walk, Fly, Swim {
   final int _id;
 
   Duck(this._id) {
-    _animalType = AnimalType.DUCK;
-    _animalName = _generateAnimalName(_id);
+    animalType = AnimalType.DUCK;
+    animalName = _generateAnimalName(_id);
     actions.addAll([walk, fly, swim]);
   }
 
@@ -121,9 +116,9 @@ class Duck extends Bird implements Walk, Fly, Swim {
 class Peacock extends Bird implements Walk, Fly, ShowTail {
   final int _id;
 
-  Peacock(this._id) {
-    _animalType = AnimalType.PEACOCK;
-    _animalName = _generateAnimalName(_id);
+  Peacock(this._id):super() {
+    animalType = AnimalType.PEACOCK;
+    animalName = _generateAnimalName(_id);
     actions.addAll([fly, showTail]);
   }
 
@@ -147,8 +142,8 @@ class Hummingbird extends Bird implements Fly {
   final int _id;
 
   Hummingbird(this._id) {
-    _animalType = AnimalType.HUMMINGBIRD;
-    _animalName = _generateAnimalName(_id);
+    animalType = AnimalType.HUMMINGBIRD;
+    animalName = _generateAnimalName(_id);
     actions.add(fly);
   }
 
@@ -162,8 +157,8 @@ class Bear extends Mammals implements ClimbTrees {
   final int _id;
 
   Bear(this._id) {
-    _animalType = AnimalType.BEAR;
-    _animalName = _generateAnimalName(_id);
+    animalType = AnimalType.BEAR;
+    animalName = _generateAnimalName(_id);
     actions.add(climbTrees);
   }
 
@@ -177,8 +172,8 @@ class Wolf extends Mammals implements WaitRedHat {
   final int _id;
 
   Wolf(this._id) {
-    _animalType = AnimalType.WOLF;
-    _animalName = _generateAnimalName(_id);
+    animalType = AnimalType.WOLF;
+    animalName = _generateAnimalName(_id);
     actions.add(waitRedHat);
   }
 
@@ -192,8 +187,8 @@ class Beaver extends Mammals implements Swim, BuildDam {
   final int _id;
 
   Beaver(this._id) {
-    _animalType = AnimalType.BEAVER;
-    _animalName = _generateAnimalName(_id);
+    animalType = AnimalType.BEAVER;
+    animalName = _generateAnimalName(_id);
     actions.addAll([swim, buildDam]);
   }
 
