@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'animal_action_interface.dart';
 import 'animal_state.dart';
 import 'animal_type.dart';
@@ -12,6 +13,8 @@ abstract class Animal implements Eat, Poop, Sleep {
 
   AnimalState _stateMutable = AnimalState.sleep;
 
+  // _state - used in descendant-classes
+  // ignore: unused_element
   AnimalState get _state => _stateMutable;
 
   set _state(AnimalState value) {
@@ -40,6 +43,7 @@ abstract class Animal implements Eat, Poop, Sleep {
     final random = Random();
     for (int i = 0; i < eventsCount; i++) {
       var actionIndex = random.nextInt(actions.length);
+      // pause between events 500 - 2000 milliseconds
       await Future.delayed(Duration(milliseconds: random.nextInt(1500) + 500));
       (i != eventsCount - 1) ? actions[actionIndex].call() : sleep();
     }
@@ -116,7 +120,7 @@ class Duck extends Bird implements Walk, Fly, Swim {
 class Peacock extends Bird implements Walk, Fly, ShowTail {
   final int _id;
 
-  Peacock(this._id):super() {
+  Peacock(this._id) : super() {
     animalType = AnimalType.peacock;
     animalName = _generateAnimalName(_id);
     actions.addAll([fly, showTail]);

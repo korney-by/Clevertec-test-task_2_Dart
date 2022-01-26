@@ -1,4 +1,3 @@
-
 abstract class Walk {
   void walk();
 }

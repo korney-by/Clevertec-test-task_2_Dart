@@ -43,4 +43,3 @@ extension AnimalStateExtension on AnimalState {
     }
   }
 }
-
