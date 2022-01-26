@@ -1,19 +1,19 @@
-enum AnimalType { DUCK, HUMMINGBIRD, BEAR, WOLF, PEACOCK, BEAVER }
+enum AnimalType { duck, hummingbird, bear, wolf, peacock, beaver }
 
 extension AnimalTypeExtention on AnimalType {
   String get value {
     switch (this) {
-      case AnimalType.DUCK:
+      case AnimalType.duck:
         return "Утка";
-      case AnimalType.HUMMINGBIRD:
+      case AnimalType.hummingbird:
         return "Колибри";
-      case AnimalType.BEAR:
+      case AnimalType.bear:
         return "Медведь";
-      case AnimalType.WOLF:
+      case AnimalType.wolf:
         return "Волк";
-      case AnimalType.PEACOCK:
+      case AnimalType.peacock:
         return "Павлин";
-      case AnimalType.BEAVER:
+      case AnimalType.beaver:
         return "Бобёр";
     }
   }

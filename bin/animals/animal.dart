@@ -10,7 +10,7 @@ abstract class Animal implements Eat, Poop, Sleep {
   final List<Function> actions = [];
   Function(Animal)? onChangeState;
 
-  AnimalState _stateMutable = AnimalState.SLEEP;
+  AnimalState _stateMutable = AnimalState.sleep;
 
   AnimalState get _state => _stateMutable;
 
@@ -47,17 +47,17 @@ abstract class Animal implements Eat, Poop, Sleep {
 
   @override
   void eat() {
-    _state = AnimalState.EAT;
+    _state = AnimalState.eat;
   }
 
   @override
   void sleep() {
-    _state = AnimalState.SLEEP;
+    _state = AnimalState.sleep;
   }
 
   @override
   void poop() {
-    _state = AnimalState.POOP;
+    _state = AnimalState.poop;
   }
 }
 
@@ -68,7 +68,7 @@ abstract class Bird extends Animal implements LayEggs {
 
   @override
   void layEggs() {
-    _state = AnimalState.LAY_EGGS;
+    _state = AnimalState.layEggs;
   }
 }
 
@@ -79,12 +79,12 @@ abstract class Mammals extends Animal implements Walk, FedMilk {
 
   @override
   void fedMilk() {
-    _state = AnimalState.FED_MILK;
+    _state = AnimalState.fedMilk;
   }
 
   @override
   void walk() {
-    _state = AnimalState.WALK;
+    _state = AnimalState.walk;
   }
 }
 
@@ -92,24 +92,24 @@ class Duck extends Bird implements Walk, Fly, Swim {
   final int _id;
 
   Duck(this._id) {
-    animalType = AnimalType.DUCK;
+    animalType = AnimalType.duck;
     animalName = _generateAnimalName(_id);
     actions.addAll([walk, fly, swim]);
   }
 
   @override
   void walk() {
-    _state = AnimalState.WALK;
+    _state = AnimalState.walk;
   }
 
   @override
   void fly() {
-    _state = AnimalState.FLY;
+    _state = AnimalState.fly;
   }
 
   @override
   void swim() {
-    _state = AnimalState.SWIM;
+    _state = AnimalState.swim;
   }
 }
 
@@ -117,24 +117,24 @@ class Peacock extends Bird implements Walk, Fly, ShowTail {
   final int _id;
 
   Peacock(this._id):super() {
-    animalType = AnimalType.PEACOCK;
+    animalType = AnimalType.peacock;
     animalName = _generateAnimalName(_id);
     actions.addAll([fly, showTail]);
   }
 
   @override
   void walk() {
-    _state = AnimalState.WALK;
+    _state = AnimalState.walk;
   }
 
   @override
   void fly() {
-    _state = AnimalState.FLY;
+    _state = AnimalState.fly;
   }
 
   @override
   void showTail() {
-    _state = AnimalState.SHOW_TAIL;
+    _state = AnimalState.showTail;
   }
 }
 
@@ -142,14 +142,14 @@ class Hummingbird extends Bird implements Fly {
   final int _id;
 
   Hummingbird(this._id) {
-    animalType = AnimalType.HUMMINGBIRD;
+    animalType = AnimalType.hummingbird;
     animalName = _generateAnimalName(_id);
     actions.add(fly);
   }
 
   @override
   void fly() {
-    _state = AnimalState.FLY;
+    _state = AnimalState.fly;
   }
 }
 
@@ -157,14 +157,14 @@ class Bear extends Mammals implements ClimbTrees {
   final int _id;
 
   Bear(this._id) {
-    animalType = AnimalType.BEAR;
+    animalType = AnimalType.bear;
     animalName = _generateAnimalName(_id);
     actions.add(climbTrees);
   }
 
   @override
   void climbTrees() {
-    _state = AnimalState.CLIMB_TREES;
+    _state = AnimalState.climbTrees;
   }
 }
 
@@ -172,14 +172,14 @@ class Wolf extends Mammals implements WaitRedHat {
   final int _id;
 
   Wolf(this._id) {
-    animalType = AnimalType.WOLF;
+    animalType = AnimalType.wolf;
     animalName = _generateAnimalName(_id);
     actions.add(waitRedHat);
   }
 
   @override
   void waitRedHat() {
-    _state = AnimalState.WAIT_RED_HAT;
+    _state = AnimalState.waitRedHat;
   }
 }
 
@@ -187,18 +187,18 @@ class Beaver extends Mammals implements Swim, BuildDam {
   final int _id;
 
   Beaver(this._id) {
-    animalType = AnimalType.BEAVER;
+    animalType = AnimalType.beaver;
     animalName = _generateAnimalName(_id);
     actions.addAll([swim, buildDam]);
   }
 
   @override
   void swim() {
-    _state = AnimalState.SWIM;
+    _state = AnimalState.swim;
   }
 
   @override
   void buildDam() {
-    _state = AnimalState.BUILD_DAM;
+    _state = AnimalState.buildDam;
   }
 }

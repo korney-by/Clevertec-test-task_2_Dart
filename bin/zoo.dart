@@ -4,12 +4,12 @@ import 'animals/animal_type.dart';
 
 class Zoo {
   Zoo._privateConstructor() {
-    _animals.addAll(_addAnimals(4, AnimalType.DUCK));
-    _animals.addAll(_addAnimals(7, AnimalType.HUMMINGBIRD));
-    _animals.addAll(_addAnimals(1, AnimalType.PEACOCK));
-    _animals.addAll(_addAnimals(3, AnimalType.BEAR));
-    _animals.addAll(_addAnimals(5, AnimalType.WOLF));
-    _animals.addAll(_addAnimals(2, AnimalType.BEAVER));
+    _animals.addAll(_addAnimals(4, AnimalType.duck));
+    _animals.addAll(_addAnimals(7, AnimalType.hummingbird));
+    _animals.addAll(_addAnimals(1, AnimalType.peacock));
+    _animals.addAll(_addAnimals(3, AnimalType.bear));
+    _animals.addAll(_addAnimals(5, AnimalType.wolf));
+    _animals.addAll(_addAnimals(2, AnimalType.beaver));
   }
 
   static final Zoo _instance = Zoo._privateConstructor();
@@ -31,17 +31,17 @@ class Zoo {
   List<Animal> _addAnimals(int quantity, AnimalType animalType) {
     Animal _addOneAnimal(int id, AnimalType animalType) {
       switch (animalType) {
-        case AnimalType.DUCK:
+        case AnimalType.duck:
           return Duck(id);
-        case AnimalType.HUMMINGBIRD:
+        case AnimalType.hummingbird:
           return Hummingbird(id);
-        case AnimalType.PEACOCK:
+        case AnimalType.peacock:
           return Peacock(id);
-        case AnimalType.BEAR:
+        case AnimalType.bear:
           return Bear(id);
-        case AnimalType.WOLF:
+        case AnimalType.wolf:
           return Wolf(id);
-        case AnimalType.BEAVER:
+        case AnimalType.beaver:
           return Beaver(id);
       }
     }

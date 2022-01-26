@@ -1,44 +1,44 @@
 enum AnimalState {
-  SLEEP,
-  EAT,
-  POOP,
-  WALK,
-  FLY,
-  SWIM,
-  CLIMB_TREES,
-  LAY_EGGS,
-  FED_MILK,
-  SHOW_TAIL,
-  WAIT_RED_HAT,
-  BUILD_DAM
+  sleep,
+  eat,
+  poop,
+  walk,
+  fly,
+  swim,
+  climbTrees,
+  layEggs,
+  fedMilk,
+  showTail,
+  waitRedHat,
+  buildDam
 }
 
 extension AnimalStateExtension on AnimalState {
   String get value {
     switch (this) {
-      case AnimalState.SLEEP:
+      case AnimalState.sleep:
         return "спит";
-      case AnimalState.EAT:
+      case AnimalState.eat:
         return "ест";
-      case AnimalState.POOP:
+      case AnimalState.poop:
         return "какает";
-      case AnimalState.WALK:
+      case AnimalState.walk:
         return "идет";
-      case AnimalState.FLY:
+      case AnimalState.fly:
         return "летит";
-      case AnimalState.SWIM:
+      case AnimalState.swim:
         return "плывет";
-      case AnimalState.CLIMB_TREES:
+      case AnimalState.climbTrees:
         return "лезет на дерево";
-      case AnimalState.LAY_EGGS:
+      case AnimalState.layEggs:
         return "откладывает яйца";
-      case AnimalState.FED_MILK:
+      case AnimalState.fedMilk:
         return "кормит молоком детенышей";
-      case AnimalState.SHOW_TAIL:
+      case AnimalState.showTail:
         return "показывает хвост";
-      case AnimalState.WAIT_RED_HAT:
+      case AnimalState.waitRedHat:
         return "ждет Красную шапочку";
-      case AnimalState.BUILD_DAM:
+      case AnimalState.buildDam:
         return "строит плотину";
     }
   }
